@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 :root {
     --black: #090909;
     --white: #fff;
@@ -8,7 +10,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-family: "Source Code Pro", monospace;
 }
 
 nav {
