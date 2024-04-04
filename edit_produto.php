@@ -24,6 +24,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <link rel="stylesheet" type="text/css" href="css/edit_produto.css">
         <link rel="stylesheet" href="css/footer.css">
 
@@ -33,10 +35,11 @@
         <title>Editar Produto</title>
     </head>
     <body>
+    <?php include("php/navbar.php"); ?>
     <main>
         <div class="form">
             <div class="title">
-              Editar produto
+                <h1>Editar produto</h1>
             </div>
             <form id="form_produto" method="post" enctype="multipart/form-data" class="formF">
                 <div class="images">
@@ -63,21 +66,7 @@
                     <input type="number" name="nr_valor" placeholder="Valor do produto" value="<?php echo $produto['vl_produto']?>">
                 </div>
                 <div class="row">
-                    <input type="number" name="nr_estoque" placeholder="Numero do estoque" value="<?php echo $produto['nr_estoque']?>">
-                </div>
-                <div class="row">
                     <textarea name="ds_produto" placeholder="Descrição"><?php echo $produto['ds_produto']?></textarea>
-                </div>
-                <div class="row">
-                    <select name="id_categoria">
-                        <?php foreach ($categoria as $item) {
-                            if ($item['id'] == $produto['id_categoria']) { ?>
-                                <option value="<?php echo $item['id']; ?>" selected><?php echo $item['nm_categoria']; ?></option>
-                            <?php } else { ?>
-                                <option value="<?php echo $item['id']; ?>"><?php echo $item['nm_categoria']; ?></option>
-                            <?php } 
-                        } ?>
-                    </select>
                 </div>
                 <div class="row button">
                     <button type="submit" id="enviar" class="btn-join">Enviar</button>
