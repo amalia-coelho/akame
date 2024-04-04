@@ -16,7 +16,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- LINK CSS -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+        <!-- LINK CSS -->
 		<link rel="stylesheet" type="text/css" href="css/navbar.css">
 		<link rel="stylesheet" type="text/css" href="css/gestao_loja.css">
 		<link rel="stylesheet" type="text/css" href="css/footer.css">
@@ -37,9 +40,11 @@
                 </div>
                 <form id="form_produto" method="post" enctype="multipart/form-data">
                     <div class="row">
+                        <p>FRENTE</p>
                         <input type="file" name="img_1">
                     </div>
                     <div class="row">
+                        <p>COSTAS</p>
                         <input type="file" name="img_2">
                     </div>
                     <div class="row">
@@ -47,9 +52,6 @@
                     </div>
                     <div class="row">
                         <input type="number" name="nr_valor" placeholder="Valor do produto">
-                    </div>
-                    <div class="row">
-                        <input type="number" name="nr_estoque" placeholder="Numero do estoque">
                     </div>
                     <div class="row">
                         <textarea name="ds_produto" placeholder="Descrição" ></textarea>
