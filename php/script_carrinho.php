@@ -3,7 +3,6 @@
         session_start();
         if (!isset($_SESSION['id'])){
             $id_prod = $_GET['id'];
-            //header('location: ../login.php?link=carrinho&id='.$id_prod);
             echo "<script>window.location.href='login.php?link=carrinho&id=$id_prod';</script>";
         }elseif(!isset($_GET['size'])){
             echo 'Selecione um tamanho!';
