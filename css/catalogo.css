@@ -1,0 +1,111 @@
+:root {
+    --white: rgba(255, 255, 255);
+    --dark-gray: #606060;
+    --dark-red: #8b0000;
+    --gray: #ededed;
+    --black: #090909;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--black);
+}
+
+/* MOBILE E TABLET*/
+@media screen and (max-width: 999px) {
+    body {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+        padding: 1em 0;
+    }
+
+    main{
+        background-color: var(--black);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3em;
+        width: 90%;
+    }
+
+    .list-product{
+        height: auto;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2em;
+
+    }
+    .list-product .product{
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5em;
+        width: 100%;
+    }
+
+    .list-product .product img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0px 0px 1px var(--white));
+    }
+}   
+
+@media only screen and (min-width: 1000px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--black);
+        align-items: center;
+        gap: 1em;
+    }
+
+    body main {
+        width: 800px;
+        height: auto;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1em;
+
+    }
+
+    main .list-product {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4em 1em;
+    }
+
+    .list-product .product {
+        width: 48%;
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+
+    .list-product .product img {
+        cursor: pointer;
+        width: 100%;
+        max-height: 25em;
+        display: block;
+        filter: drop-shadow(0px 0px 1px var(--white));
+    }
+}
