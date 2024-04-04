@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 :root {
     --black: #090909;
     --white: #ffffff;
@@ -8,7 +10,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-family: "Source Code Pro", monospace;
 }
 
 html, body{
@@ -19,20 +21,21 @@ body{
 	background-color: var(--black);
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: space-between;
+	align-items: center;
 	gap: 3em;
 }
 
 main{
 	display: flex;
+	align-items: center;
 	gap: 2em;
 	width: 90%;
 }
 
 .form{
 	width: 550px;
-	height: 620px;
+	height: auto;
 	border: 3px solid var(--white);
 	border-style:solid;
 	border-radius: 5px;
@@ -43,7 +46,7 @@ main{
 	border-bottom-style:solid;
 	border-radius: 5px 5px 0 0;
 	color: #fff;
-	font-size: 30px;
+	font-size: 15px;
 	font-weight: 600;
 	display: flex;
 	align-items: center;
@@ -56,13 +59,14 @@ main{
 }
 
 .form form .row{
-	height: 45px;
+	height: 100%;
 	margin-bottom: 15px;
 	position: relative;
+	color: var(--white);
 }
 
 .form form .row input{
-	height: 100%;
+	height: 40px;
 	width: 100%;
 	outline: none;
 	padding-left:1rem;
@@ -71,6 +75,19 @@ main{
 	font-size: 16px;
 	transition: all 0.3s ease;
 }
+
+.form form .row textarea{
+	width: 100%;
+	height: 4em;
+	outline: none;
+	padding-left:1rem;
+	padding-top: 0.5em;
+	border-radius: 5px;
+	border: 1px solid lightgrey;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
 
 form .row input::placeholder{
 	color: #999;
@@ -137,8 +154,8 @@ button.btn-join:hover {
 
 .list-product .product img{
     display: block;
-    width: 17em;
-    height: 21em;
+    width: 20em;
+    height: 23em;
     filter: drop-shadow(0px 0px 1px var(--white));
 }
 
@@ -152,8 +169,8 @@ button.btn-join:hover {
 
 a.btn-join {
     display: inline-block; 
-    padding: 0.8em 1.8em;
-    border: 2px solid ;
+    padding: 0.5em 3em;
+    border: 2px solid;
     position: relative;
     overflow: hidden;
     background-color: transparent;
@@ -195,7 +212,7 @@ a.btn-join:hover {
     color: var(--white);
 }
 
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 1190px){
 	main{
 		flex-direction: column;
 		width: 80%;
@@ -204,7 +221,12 @@ a.btn-join:hover {
 	}
 
 	.list-product{
-		width: 550px;
+		width: 100%;
+		justify-content: center;
+	}
+
+	.product{
+		max-width: 20em;
 	}
 
 	.form{
@@ -217,7 +239,7 @@ a.btn-join:hover {
 		flex-direction: column;
 		justify-content: space-around;
 		height: auto;
-		font-size: 4em;
+		font-size: 14px;
 	}
 
 	.product{
@@ -227,7 +249,7 @@ a.btn-join:hover {
 
 @media only screen and (max-width: 600px){
 	main{
-		width: 100%;
+		width: 90%;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -236,10 +258,21 @@ a.btn-join:hover {
 	.list-product{
 		width: 100%;
 		flex-direction: column;
+		align-items: center;
+		color: var(--white);
 	}
 
 	.product{
 		width: 100%;
 		justify-content: space-between;
+	}
+
+	.product img{
+		width: 100%;
+		height: auto;
+	}
+
+	.product .product-action{
+		width: 100%;
 	}
 }
