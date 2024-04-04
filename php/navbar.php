@@ -5,25 +5,25 @@
         <div class="line3"></div>
     </div>
     <div class="logo">
-        <a href="index.php"><img src="img/logo.png " alt="logo"></a>
+        <a href="index.php"><img src="img/logo.png" alt="logo"></a>
     </div>
     <ul class="nav-list">
         <li><a href="index.php">Início</a></li>
         <li><a href="catalogo.php">Catálogo</a></li>
         <?php
             if(isset($_SESSION['id']) && $_SESSION['nivel'] == 1){?>
+                <li><a href="carrinho.php">Carrinho</a></li>
                 <li><a href="gestao_loja.php">Produtos</a></li>
                 <li><a href="gestao_categ.php"> Categorias</a></li>
                 <li><a href="users.php">Users</a></li>
         <?php    
             }else if(isset($_SESSION['id']) && $_SESSION['nivel'] != 1){?>
-                <li><a href="catalogo.php">Início</a></li>
                 <li><a href="carrinho.php">Carrinho</a></li>
         <?php
             }
 
             if(isset($_SESSION['id'])){?>
-                <li><a class="cadastro" href="logout.php">Sair</a></li>
+                <li><a href="logout.php">Sair</a></li>
         <?php
             }else{?>
                 <li><a href="login.php">Login</a></li>
