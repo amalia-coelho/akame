@@ -11,18 +11,20 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./img/CRUZ.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" href="css/login-cadastro.css">
     <link rel="stylesheet" href="css/footer.css">
   	<script src="js/jquery-3.6.0.min.js"></script>
 
-    <title>Login</title>
+    <title>Login | DN'TT ®</title>
 </head>
 <body>
     <?php include("php/navbar.php"); ?>
     <main>
         <div class="containerF">
+            <hr>
             <div class="wrapperF">
                 <div class="title">
                     <h1>Login</h1>
@@ -34,15 +36,15 @@
                     <div class="row">
                         <input type="password" placeholder="Senha:" id="password">
                     </div>
-                    <div class="pass">
+                    <!--<div class="pass">
                         <a href="#">Forgot password?</a>
-                    </div>
+                    </div>-->   
                     <span></span> <!-- retorno ajax-->
                     <div class="row button">
                         <button id="entrar" class="btn-join">Entrar</button>
                     </div>
                     <div class="signup-link">
-                        <p>Not a member? <a href="cadastro.php">Akame | register</a></p>
+                        <p>Not a member? <a href="cadastro.php">Register</a></p>
                     </div>
                 </div>
             </div>

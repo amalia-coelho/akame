@@ -9,18 +9,20 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="./img/CRUZ.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" href="css/login-cadastro.css">
     <link rel="stylesheet" href="css/footer.css">
 	<script src="js/jquery-3.6.0.min.js"></script>
 	
-    <title>Cadastro | Akame</title>
+    <title>Cadastro | DN'TT ®</title>
 </head>
 <body>
     <?php include("php/navbar.php"); ?>
     <main>
         <div class="containerF">
+            <hr>
             <div class="title">
                 <h1>Cadastro</h1>
             </div>
@@ -42,7 +44,7 @@
                     <div class="row button">
                         <button type="submit" id="entrar" class="btn-join">Cadastrar</button>
                     </div>
-                    <div class="signup-link">Not a member? <a href="login.php">Akame | login</a></div>
+                    <div class="signup-link">Already a member? <a href="login.php">Login</a></div>
                 </form> 
             </div>
         </div>

@@ -12,6 +12,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="./img/CRUZ.webp">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="css/footer.css">
@@ -19,7 +20,7 @@
         <link rel="stylesheet" href="css/catalogo.css">
 
         <script src="js/jquery-3.6.0.min.js"></script>
-        <title>Produtos - Akame</title>
+        <title>Produtos - DN'TT ®</title>
     </head>
     <body>
         <?php include('php/navbar.php');?>
@@ -33,9 +34,6 @@
                             <div class="product">
                                 <div class="product-image">
                                     <img src="img/<?php echo $produto['img_1'];?>" onmouseover="changeImage(this, '<?php echo 'img/'.$produto['img_2'];?>')" onmouseout="changeImage(this, '<?php echo 'img/'.$produto['img_1'];?>')" onclick="window.location.href='produto.php?id=<?php echo $produto['nm_produto'];?>'">
-                                </div>
-                                <div class="product-content">
-                                    <h3>R$ <?php echo $produto['vl_produto'];?></h3>
                                 </div>
                             </div>
                     <?php
