@@ -51,7 +51,7 @@ if (!isset($_SESSION['id'])){
                 </div>
                 <div class="desc-prod">
                     <div class="nm-prod">
-                        <h3><a href="produto.php/id='<?php echo $id_produto;?>'"><?php echo $produto['nm_produto'];?></a></h3>
+                        <h5><a href="produto.php/id='<?php echo $id_produto;?>'"><?php echo $produto['nm_produto'];?></a></h5>
                     </div>
                     <div class="vl-prod">
                         <p id="valor">R$ <?php echo $produto['vl_produto'];?></p>
@@ -63,12 +63,12 @@ if (!isset($_SESSION['id'])){
                 <div class="quant">
                     <div class="quant-space">
                         <button class="btn decrementButton" data-id-produto="<?php echo $produto['id'];?>"><i class="fas fa-minus"></i></button>
-                        <input type="number" id="quant" value="<?php echo $item['nr_quant'];?>">
+                        <input type="number" class="quantidade" value="<?php echo $item['nr_quant'];?>">
                         <button class="btn incrementButton" data-id-produto="<?php echo $produto['id'];?>"><i class="fas fa-plus"></i></i></button>
                     </div>
                 </div>
                 <div class="preco-total">
-                    <h4>R$ <?php echo $produto['vl_produto']*$item['nr_quant'];?></h4>
+                    <h4>R$ <?php echo $produto['vl_produto'] * $item['nr_quant'];?></h4>
                 </div>
             </div>
             <?php
@@ -78,8 +78,12 @@ if (!isset($_SESSION['id'])){
             }
             ?>
         </div>
-        <div class="info-total">
-            
+        <div class="final-carrinho">
+            <div class="info-total">
+                <h2></h2>
+                <h4>Tributos e frete calculados na finalização da compra</h4>
+                <button class="final-button" onclick="window.location.href='checkout.php'">Finalizar compra</button>
+            </div>
         </div>
         </div> 
     </main>
@@ -94,36 +98,50 @@ if (!isset($_SESSION['id'])){
 
             $('.decrementButton').click(function() {
                 var id_produto = $(this).data('id-produto');
-                var quant = $(this).siblings('.quant-space').find('#quant').val();
-                if (quant > 1) {
+                var quant = $('.quantidade').val();
+                if(quant > 1){
                     updateNumber('decrement', id_produto, $(this));
                 }
-                calculatTotalProduto();
             });
 
-            function updateNumber(action, id_produto, button) {
-                var quant = parseInt(button.siblings('.quant-space').find('#quant').val());
+            $('.quantidade').change(function() {
+                var id_produto = $(this).closest('.prod').find('.incrementButton').data('id-produto');
+                updateNumber('direct', id_produto, $(this));
+            });
+
+            function updateNumber(action, id_produto, element) {
+                var quantInput = element.closest('.quant-space').find('.quantidade');
+                var quant = parseInt(quantInput.val());
                 $.ajax({
-                    url: 'php/update_quant.php?id=' + id_produto,
+                    url: 'php/update_quant.php?id='+ id_produto,
                     method: 'POST',
                     data: { action: action, number: quant },
                     success: function(response) {
-                        button.siblings('.quant-space').find('#quant').val(response);
+                        quantInput.val(response);
+                        calculateTotalPrice(element);
                         calcularTotal();
                     }
                 });
             }
 
-            function calcularTotal() {
-                var total = 0;
-                $('.prod').each(function() {
-                    var preco = parseFloat($(this).find('.preco-total h4').text().replace('R$', '').trim());
-                    total += preco;
-                });
-                $('.info-total').text('Total: R$ ' + total.toFixed(2)); 
+            function calculateTotalPrice(element) {
+                var prodDiv = element.closest('.prod');
+                var pricePerUnit = parseFloat(prodDiv.find('.vl-prod p').text().replace('R$ ', ''));
+                var quant = parseInt(prodDiv.find('.quantidade').val());
+                var totalPrice = pricePerUnit * quant;
+                prodDiv.find('.preco-total h4').text('R$ ' + totalPrice.toFixed(2));
             }
 
-            calcularTotal();   
+            function calcularTotal() {
+                var total = 0;
+                $('.preco-total h4').each(function() {
+                    var price = parseFloat($(this).text().replace('R$ ', ''));
+                    total += price;
+                });
+                $('.info-total h2').text('Total: R$ ' + total.toFixed(2));
+            }
+
+            calcularTotal();
         });   
     </script>
 </body>
