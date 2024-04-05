@@ -24,16 +24,15 @@ main{
     justify-content: center;
     align-items: center;
 }
-
+hr{
+    opacity: 10%;
+}
 .containerF{
     width: 30%;
-    border: 2px solid var(--white);
 }
 
 .containerF .title{
     height: 90px;
-    border-bottom-style:solid;
-    border-radius: 5px 5px 0 0;
     color: #fff;
     display: flex;
     align-items: center;
@@ -60,7 +59,6 @@ main{
     width: 100%;
     outline: none;
     padding-left:1rem;
-    border-radius: 5px;
     border: 1px solid lightgrey;
     font-size: 16px;
     transition: all 0.3s ease;

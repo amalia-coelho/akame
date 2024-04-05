@@ -27,7 +27,6 @@
     flex:1;
     min-height: 100vh;
     color:var(--white);
-    
   }
   .right{
     background-color:var(--black);

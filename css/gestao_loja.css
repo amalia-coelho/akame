@@ -36,15 +36,12 @@ main{
 .form{
 	width: 550px;
 	height: auto;
-	border: 3px solid var(--white);
+	border: 1px solid var(--white);
 	border-style:solid;
-	border-radius: 5px;
 }
 
 .form .title{
 	height: 90px;
-	border-bottom-style:solid;
-	border-radius: 5px 5px 0 0;
 	color: #fff;
 	font-size: 15px;
 	font-weight: 600;
@@ -70,7 +67,6 @@ main{
 	width: 100%;
 	outline: none;
 	padding-left:1rem;
-	border-radius: 5px;
 	border: 1px solid lightgrey;
 	font-size: 16px;
 	transition: all 0.3s ease;
@@ -121,7 +117,7 @@ button.btn-join{
     background-color: transparent;
     text-align: center;
     text-transform: uppercase;
-    text-deconration: none;
+    text-decoration: none;
     font-size: 16px;
     transition: .3s;
     z-index: 1;
@@ -134,7 +130,10 @@ button.btn-join:hover {
 	background: var(--white);
 	color: #111;
 }
-
+a {
+	color: #96acda;
+	text-decoration: none;
+}
 .list-product{
     width: 100%;
     height: auto;
