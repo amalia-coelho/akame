@@ -5,7 +5,7 @@
         <div class="line3"></div>
     </div>
     <div class="logo">
-        <a href="index.php"><img src="img/logo.png" alt="logo"></a>
+        <a href="index.php"><img src="img/logo.webp" alt="logo"></a>
     </div>
     <ul class="nav-list">
         <li><a href="index.php">Início</a></li>
@@ -14,7 +14,6 @@
             if(isset($_SESSION['id']) && $_SESSION['nivel'] == 1){?>
                 <li><a href="carrinho.php">Carrinho</a></li>
                 <li><a href="gestao_loja.php">Produtos</a></li>
-                <li><a href="gestao_categ.php"> Categorias</a></li>
                 <li><a href="users.php">Users</a></li>
         <?php    
             }else if(isset($_SESSION['id']) && $_SESSION['nivel'] != 1){?>

@@ -23,7 +23,7 @@ if($_POST['nm_produto'] == "" or $_POST['nr_valor'] == "" or $_POST['ds_produto'
         echo "Nome de produto já cadastrado!";
     }else{
         // Verificando a extensão das imagens
-        if($ext_1 == '.jpg' || $ext_1 == 'jpeg' || $ext_1 == '.png' || $ext_2 == '.jpg' || $ext_2 == 'jpeg' || $ext_2 == '.png'){
+        if($ext_1 == 'webp' || $ext_2 == 'webp'){
             try{
                 if (move_uploaded_file($img_1['tmp_name'], '../img/'.$nomeFinal_1) && move_uploaded_file($img_2['tmp_name'], '../img/'.$nomeFinal_2)) {
                 $stmt = $conn->prepare('INSERT INTO tb_products(nm_produto, vl_produto, ds_produto, img_1, img_2) VALUES(:nm_produto, :nr_valor, :ds_produto, :img_1, :img_2)');
@@ -41,7 +41,8 @@ if($_POST['nm_produto'] == "" or $_POST['nr_valor'] == "" or $_POST['ds_produto'
                 echo 'Error: ' . $e->getMessage();
             }
         }else{
-            echo 'Envie somente arquivos JPG, JPEG ou PNG!';
+            echo 'Envie somente arquivos WEBP!';
+            echo "<a href='https://www.freeconvert.com/pt/png-to-webp' target='_blank'>Clique aqui para converter sua imagem para WEBP</a>";
         }
     }
 }

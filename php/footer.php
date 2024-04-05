@@ -14,16 +14,16 @@ $date = date('Y');
             <div class="footer-col">
                 
                 <div class="social-links">
-                    <a href="https://twitter.com/akameorg/"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/akameorganization/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@akameorganization/"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://twitter.com/dnttanyone/"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/dntt.organization/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@dntt.organization/"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
 
   	 		<div class="footer-col">
   	 			
   	 			<ul>
-  	 				<li><a href="https://www.instagram.com/ibex.dev/">© <?php echo $date;?>, Akame Organization | Developed by ibex</a></li>
+  	 				<li><a href="https://www.instagram.com/ibex.dev/">© <?php echo $date;?>, DN'TT | Developed by ibex</a></li>
 
   	 			</ul>
   	 		</div>

@@ -22,6 +22,8 @@ require('conecta.php');
 			echo "Nome de usuario atingiu o limite máximo de caracteres (80)";
 		}elseif(strlen($senha) > 20){
 			echo "Senha atingiu o limite máximo de caracteres (20)";
+		}elseif(strlen($senha) < 6){
+			echo "Digite pelo menos 6 caracteres na sua senha";
 		}elseif($valid_user_space == true){
 			// Consultando E-mail
 		    $script_email = $conn->prepare('SELECT * FROM tb_users WHERE ds_login = :login');
