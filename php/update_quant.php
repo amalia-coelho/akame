@@ -14,6 +14,8 @@
             $newNumber = $currentNumber + 1;
         } elseif ($action == 'decrement') {
             $newNumber = $currentNumber - 1;
+        }else{
+            $newNumber = $currentNumber;
         }
         
         $sql = "UPDATE tb_carrinho SET nr_quant = :newNumber WHERE id_user = :id_user AND id_produto = :id_produto";
