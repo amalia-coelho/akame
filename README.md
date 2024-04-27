@@ -1,5 +1,4 @@
 # Akame
-
 Um ecommerce minimalista na estética streetwear
 Link: ![Akame site](https://www.dontrustanyone.com)
 
