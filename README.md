@@ -1,6 +1,5 @@
 # Akame
 Um ecommerce minimalista na estética streetwear
-Link: ![Akame site](https://www.dontrustanyone.com)
 
 ## Descrição
 Um projeto feito sob pedido do empreendedor/fundador da marca DN'T, participei ativamente do front-end deste projeto, feito puramente com HTML, CSS, JS;
